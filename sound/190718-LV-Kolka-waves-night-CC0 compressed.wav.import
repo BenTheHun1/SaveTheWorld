@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/190718-LV-Kolka-waves-night-CC0 compressed.wav-587d507cea996a6c7fb15c7eb70386bb.sample"
+
+[deps]
+
+source_file="res://sound/190718-LV-Kolka-waves-night-CC0 compressed.wav"
+dest_files=[ "res://.import/190718-LV-Kolka-waves-night-CC0 compressed.wav-587d507cea996a6c7fb15c7eb70386bb.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
