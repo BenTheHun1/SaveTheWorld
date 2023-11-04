@@ -202,13 +202,13 @@ func extendInv():
 	var inv = parent.get_node("CanvasLayer/INV")
 	if inv_out == false:
 		for i in range(117):
-			for _i in range(animspeed / 4):
+			for _i in range(animspeed):
 				yield(get_tree(), "idle_frame")
 			inv.position[0] -= 1
 		inv_out = true
 	else:
 		for i in range(117):
-			for _i in range(animspeed / 4):
+			for _i in range(animspeed):
 				yield(get_tree(), "idle_frame")
 			inv.position[0] += 1
 		inv_out = false
@@ -239,6 +239,6 @@ func changeMoney(num):
 	get_parent().get_node("CanvasLayer/money").text = "$" + String(money)
 	
 func _process(delta):
-	animspeed = 1.0 / delta / 64
-	#print(textspeed)
+	animspeed = 1.0 / delta / 128
+	#print(animspeed)
 
