@@ -44,7 +44,7 @@ func slowtype(text):
 			yield(get_tree(), "idle_frame")
 		$CanvasLayer/box_bg/box_txt.visible_characters += 1
 	
-	for _i in range(400):
+	for _i in range(textspeed * 200):
 		yield(get_tree(), "idle_frame")
 	
 	$Player.dontextend = false
@@ -147,16 +147,16 @@ func spawn():
 	
 	var yes = true
 	var total_points = $validpoints.get_child_count()
-	
+	for _i in range(10):
+				yield(get_tree(), "idle_frame")
 	while filled_points.size() < total_points and is_paused == false:
 		var selected_point = round(rand_range(1, total_points))
 		if filled_points.has(selected_point):
 			pass
 		else:
-			for _i in range(1000):
+			for _i in range(textspeed * 100):
 				yield(get_tree(), "idle_frame")
 			
-			#print(selected_point)
 			var trash = trashresource.instance()
 			add_child(trash)
 			trash.position = get_node("validpoints/" + String(selected_point)).position

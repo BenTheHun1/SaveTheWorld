@@ -9,6 +9,7 @@ var lastmotion
 var canAsk = false
 var motion
 var parent
+var animspeed
 var selected_obj
 var selected_obj2_1
 var selected_obj2_2
@@ -88,7 +89,7 @@ func _physics_process(delta):
 				$Sprite.play("raction")
 			"u":
 				$Sprite.play("baction")
-		for i in range(75):
+		for i in range(animspeed * 25):
 				yield(get_tree(), "idle_frame")
 		action = false
 
@@ -201,13 +202,13 @@ func extendInv():
 	var inv = parent.get_node("CanvasLayer/INV")
 	if inv_out == false:
 		for i in range(117):
-			for _i in range(1):
+			for _i in range(animspeed / 4):
 				yield(get_tree(), "idle_frame")
 			inv.position[0] -= 1
 		inv_out = true
 	else:
 		for i in range(117):
-			for _i in range(1):
+			for _i in range(animspeed / 4):
 				yield(get_tree(), "idle_frame")
 			inv.position[0] += 1
 		inv_out = false
@@ -236,3 +237,8 @@ func _on_ObjDetect_area_exited(area):
 func changeMoney(num):
 	money += num
 	get_parent().get_node("CanvasLayer/money").text = "$" + String(money)
+	
+func _process(delta):
+	animspeed = 1.0 / delta / 64
+	#print(textspeed)
+
